@@ -17,8 +17,8 @@ It uncovers sales trends, identifies top-performing products, and highlights pea
 ## 🛠️ Tools & Technologies
 | Category | Tools Used |
 |-----------|-------------|
-| **Data Processing** | Snowflake, MySQL Workbench, Databricks |
-| **Visualization** | Microsoft Excel, Power BI, Tableau |
+| **Data Processing** | Snowflake, Databricks |
+| **Visualization** | Microsoft Excel, Power BI,  |
 | **Planning & Presentation** | Miro, PowerPoint, Canva |
 
 ---
@@ -31,74 +31,21 @@ Designed a **data flow diagram** showing:
 - Storage in Snowflake  
 - Analysis and reporting workflow  
 
-**Key Calculations**
-```sql
-total_amount = unit_price * transaction_qty
-💾 Task 2: Data Processing (Snowflake)
-Converted the Excel file into CSV format
+## 🔍 Key Insights – Bright Coffee Shop Sales Analysis
 
-Imported the CSV into Snowflake
+1. **High-Revenue Products Identified**  
+   Coffee-based beverages, particularly cappuccinos, lattes, and iced coffees, generated the highest total revenue. These premium items accounted for a significant portion of total sales, indicating strong customer preference for specialty drinks over standard options.
 
-Cleaned and transformed the data:
+2. **Peak Sales During Morning and Midday Hours**  
+   The store achieved its highest sales between **7:30 AM and 11:30 AM**, coinciding with morning commutes and work breaks. Sales tapered off in the late afternoon, suggesting an opportunity to run targeted promotions or discounts during quieter hours.
 
-Corrected price formats (e.g., '3,1' → 3.1)
+3. **Opportunities for Product Mix Optimization**  
+   While pastries and snacks showed moderate sales, they displayed steady daily demand. Introducing **combo offers or loyalty-based bundles** with top-selling beverages could boost total transaction value and encourage repeat purchases.
 
-Added a time bucket column for grouping
-
-Calculated total sales per transaction
-
-Sample Query
-
-sql
-Copy code
-SELECT 
-    product_type,
-    DATE_TRUNC('hour', transaction_time) AS time_bucket,
-    SUM(unit_price * transaction_qty) AS total_amount,
-    SUM(transaction_qty) AS total_units
-FROM bright_coffee_sales
-GROUP BY product_type, time_bucket
-ORDER BY time_bucket;
-📊 Task 3: Data Analysis (Excel / Power BI)
-Created dashboards showing:
-
-Total revenue by product type
-
-Peak sales hours
-
-Quantity of items sold
-
-Top-performing and low-performing products
-
-🎤 Task 4: Presentation
-Presented findings and recommendations to management.
-
-Recommendations
-
-Launch marketing campaigns during slow periods
-
-Stock up on top-selling items
-
-Promote underperforming products
-
-Automate daily sales tracking
-
-Introduce loyalty programs during high-traffic hours
-
-📦 Deliverables
-✅ Miro Architecture Diagram
-
-✅ Cleaned Dataset (Excel / CSV)
-
-✅ SQL Scripts
-
-✅ PowerPoint Presentation
+4. **Consistent Daily and Weekly Performance Patterns**  
+   Sales trends remained steady across weekdays, with slightly higher performance on working days compared to weekends. This predictable demand pattern supports better **inventory management, staff scheduling,** and the potential for **automated daily reporting** to streamline operations.
 
 
-
-Scale reporting for multiple store locations
-
-Integrate customer loyalty data for advanced insights
 
 👩🏽‍💻 Author
 Amukelani Khosa
